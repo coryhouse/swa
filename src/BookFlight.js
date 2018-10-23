@@ -1,6 +1,7 @@
 import React from "react";
 import createReactClass from "create-react-class";
 import { getFlights } from "./api/flightApi";
+import CustomerInformationForm from "./CustomerInformationForm";
 
 const BookFlight = createReactClass({
   getInitialState: function() {
@@ -64,6 +65,7 @@ const BookFlight = createReactClass({
           <>
             <h2>Selected Flight</h2>
             Yee ha! You're going to {this.state.selectedFlight.destination}!
+            <CustomerInformationForm />
           </>
         )}
       </>

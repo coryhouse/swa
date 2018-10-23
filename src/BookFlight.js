@@ -63,7 +63,7 @@ const BookFlight = createReactClass({
         {this.state.selectedFlight && (
           <>
             <h2>Selected Flight</h2>
-            {this.state.selectedFlight.flightNumber}
+            Yee ha! You're going to {this.state.selectedFlight.destination}!
           </>
         )}
       </>

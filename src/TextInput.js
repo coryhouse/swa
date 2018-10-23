@@ -4,7 +4,7 @@ import createReactClass from "create-react-class";
 
 const TextInput = createReactClass({
   render: function() {
-    const { label, id, onChange, value } = this.props;
+    const { label, id, onChange, value, name } = this.props;
     return (
       <div>
         <label htmlFor={id}>{label}</label>

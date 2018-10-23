@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hides label when showLabel is false 1`] = `
+<div>
+  <br />
+  <input
+    id="firstName"
+    name="firstName"
+    onChange={[MockFunction]}
+    type="text"
+    value="example"
+  />
+</div>
+`;
+
+exports[`renders label by default 1`] = `
+<div>
+  <label
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <br />
+  <input
+    id="firstName"
+    name="firstName"
+    onChange={[MockFunction]}
+    type="text"
+    value="example"
+  />
+</div>
+`;

@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { getFlights } from "./actions/flightActions";
+
+getFlights();
 
 // CommonJS syntax - Popularized by Node
 // var React = require("react");

@@ -15,21 +15,24 @@ var FlightStore = Object.assign({}, EventEmitter.prototype, {
   },
 
   emitChange: function() {
-    this.emitChange(CHANGE_EVENT);
+    this.emit(CHANGE_EVENT);
   },
 
-  getAllFlights: function() {
+  getFlights: function() {
     return _flights;
   }
 });
 
 Dispatcher.register(function(action) {
   switch (action.actionType) {
-    case ActionTypes.GET_FLIGHTS:
-      _flights(action.flights);
+    case ActionTypes.FLIGHTS_LOADED:
+      debugger;
+      _flights = action.flights;
       FlightStore.emitChange();
       break;
     default:
     // no op
   }
 });
+
+module.exports = FlightStore;

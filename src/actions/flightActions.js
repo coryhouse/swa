@@ -4,13 +4,12 @@ var ActionTypes = require("../constants/actionTypes");
 
 var FlightActions = {
   getFlights: function() {
-    flightApi.getFlights.then(flights => {
-      var flights = flights;
-
+    flightApi.getFlights().then(flights => {
+      debugger;
       // Hey dispatcher, go tell all the stores that new flight info
       // has been loaded.
       Dispatcher.dispatch({
-        actionType: ActionTypes.GET_FLIGHT,
+        actionType: ActionTypes.FLIGHTS_LOADED,
         flights: flights
       });
     });

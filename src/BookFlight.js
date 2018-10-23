@@ -1,7 +1,8 @@
 import React from "react";
 import createReactClass from "create-react-class";
-import { getFlights } from "./api/flightApi";
+// import { getFlights } from "./api/flightApi";
 import CustomerInformationForm from "./CustomerInformationForm";
+import FlightStore from "./store/flightStore";
 
 const BookFlight = createReactClass({
   getInitialState: function() {
@@ -11,12 +12,26 @@ const BookFlight = createReactClass({
     };
   },
 
-  componentDidMount: function() {
-    // var self = this;
-    getFlights().then(flights => {
-      this.setState({ flights: flights });
-    });
+  componentWillMount: function() {
+    debugger;
+    FlightStore.addChangeListener(this.onChange);
   },
+
+  componentWillUnmount: function() {
+    FlightStore.removeChangeListener(this.onChange);
+  },
+
+  onChange: function() {
+    debugger;
+    this.setState({ flights: FlightStore.getFlights() });
+  },
+
+  //   componentDidMount: function() {
+  //     // var self = this;
+  //     getFlights().then(flights => {
+  //       this.setState({ flights: flights });
+  //     });
+  //   },
 
   selectFlight: function(flight) {
     this.setState({ selectedFlight: flight });

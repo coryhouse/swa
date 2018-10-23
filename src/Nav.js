@@ -5,6 +5,11 @@ import React from "react";
 import createReactClass from "create-react-class";
 import { Link } from "react-router-dom";
 
+// Create 2 components:
+// 1. Home
+// 2. BookFlight
+// Inside, put <h1>
+
 const Nav = createReactClass({
   render: function() {
     return (

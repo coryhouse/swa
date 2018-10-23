@@ -1,5 +1,7 @@
 import React from "react";
-import { add } from "./math";
+import { Route } from "react-router-dom";
+import Home from "./Home";
+import BookFlight from "./BookFlight";
 import Nav from "./Nav";
 import createReactClass from "create-react-class";
 import "./App.css";
@@ -9,8 +11,8 @@ const App = createReactClass({
     return (
       <>
         <Nav />
-        <h1>Home</h1>
-        {add(1, 2)}
+        <Route path="/" exact component={Home} />
+        <Route path="/book-flight" component={BookFlight} />
       </>
     );
   }

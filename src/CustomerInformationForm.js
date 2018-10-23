@@ -1,5 +1,6 @@
 import React from "react";
 import createReactClass from "create-react-class";
+import TextInput from "./TextInput";
 
 const CustomerInformationForm = createReactClass({
   getInitialState: function() {
@@ -25,17 +26,13 @@ const CustomerInformationForm = createReactClass({
     return (
       <form onSubmit={this.onSubmit}>
         <h3>Tell us about yourself</h3>
-        <div>
-          <label htmlFor="firstName">First Name</label>
-          <br />
-          <input
-            id="firstName"
-            type="text"
-            name="firstName"
-            onChange={this.onChange}
-            value={this.state.customer.firstName}
-          />
-        </div>
+        <TextInput
+          id="firstName"
+          label="First Name"
+          name="firstName"
+          value={this.state.customer.firstName}
+          onChange={this.onChange}
+        />
 
         <div>
           <label htmlFor="email">Email</label>
